@@ -2,7 +2,6 @@
 layout: post
 title:  "迁移到 Django 3：使用 Field.choices 枚举类型"
 date:   2020-08-16 10:04:34 +0800
-categories: jekyll update
 ---
 参考：
 

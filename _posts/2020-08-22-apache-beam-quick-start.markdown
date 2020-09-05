@@ -2,7 +2,6 @@
 layout: post
 title:  "Apache Beam 快速上手"
 date:   2020-08-22 10:04:34 +0800
-categories: jekyll update
 ---
 [Apache Beam](https://beam.apache.org/) 是一种大数据处理标准，由谷歌于 2016 年创建。
 
