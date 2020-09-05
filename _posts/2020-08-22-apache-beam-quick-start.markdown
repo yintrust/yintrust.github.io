@@ -5,7 +5,6 @@ date:   2020-08-22 10:04:34 +0800
 categories: jekyll update
 ---
 [Apache Beam](https://beam.apache.org/) 是一种大数据处理标准，由谷歌于 2016 年创建。
-我们的程序使用 Apache Beam 来处理 **解析** 过程。
 
 Apache Beam 的数据处理流程如下图所示：
 
@@ -58,18 +57,18 @@ class CountWords(beam.PTransform):
             | 'FormatCounts' >> beam.ParDo(FormatCountsFn()))
 ```
 
-我们的程序中用到的内置的转换函数如下：
+常用的内置的转换函数如下：
 
 - `Create`：用于从内存 **列表** 中创建 PCollection。
-- `Map(fn)`：使用 ``fn`` 函数对 PCollection 中的每一个元素做 **一对一** 的转换处理。
+- `Map(fn)`：使用 `fn` 函数对 PCollection 中的每一个元素做 **一对一** 的转换处理。
 - `Flatten`：
-- `FlatMap(fn)`：使用 ``fn`` 函数对 PCollection 中的每一个元素做 **一对多** 的转换处理，并将结果合并成一个 PCollection。
-- `ParDo(fn)`：和 ``FlatMap(fn)`` 类似，只是它的 ``fn`` 参数必须是一个 ``DoFn`` 的 **子类**。
+- `FlatMap(fn)`：使用 `fn` 函数对 PCollection 中的每一个元素做 **一对多** 的转换处理，并将结果合并成一个 PCollection。
+- `ParDo(fn)`：和 `FlatMap(fn)` 类似，只是它的 `fn` 参数必须是一个 `DoFn` 的 **子类**。
 - `GroupByKey`：
-- `CoGroupByKey`：对多个二元组 PCollection 按相同键进行合并，如输入的是 ``(k, v)`` 和 ``(k, w)``，则输出 ``(k, (iter<v>, iter<w>))``。
+- `CoGroupByKey`：对多个二元组 PCollection 按相同键进行合并，如输入的是 `(k, v)` 和 `(k, w)`，则输出 `(k, (iter<v>, iter<w>))`。
 - `Distinct`：对 PCollection 进行 **去重**。
 
-最后，通过一个简单的例子来结束这一小节的内容：
+最后，通过一个简单的例子来结束本文的内容：
 
 ```python
 import apache_beam as beam

@@ -13,3 +13,7 @@ Online access address: <https://yintrust.github.io>
 2. `cd yintrust.github.io`
 3. `bundle install`
 4. `bundle exec jekyll serve --livereload --incremental`
+
+## Basic usage
+
+- Create new post: `bundle exec jekyll post "My New Post"`
